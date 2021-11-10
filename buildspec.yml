@@ -11,8 +11,6 @@ phases:
       - npm install
   build:
     commands:
-      - echo "Testing ..."
-      - npm run test
       - echo "Building ..."
       - npm run build
 
