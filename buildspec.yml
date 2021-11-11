@@ -13,12 +13,15 @@ phases:
     commands:
       - echo "Building ..."
       - npm run build
+  post_build:
+    commands:
+      - echo $CODEBUILD_SRC_DIR
+      - cd $CODEBUILD_SRC_DIR; bash deploy.sh
 
 artifacts:
   files:
-    - "**/*"
+    - "build/**/*"
   discard-paths: no
-  base-directory: build
 
 cache:
   paths:
